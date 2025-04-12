@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Age Calculator - Pro Edition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Fira Code', monospace;
+      background-color: #0a0a0a;
+      color: #00ffcc;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #111;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 1.8rem;
+      color: #00ffcc;
+      border-bottom: 2px solid #00ffcc;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .start-animation {
+      text-align: center;
+      animation: fadeInZoom 2s ease-in-out;
+    }
+
+    @keyframes fadeInZoom {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .image-hero img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0 0 30px #00ffcc66;
+    }
+
+    form {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    input, button {
+      padding: 0.7rem 1rem;
+      margin: 0.5rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
+
+    input {
+      background: #111;
+      color: #00ffcc;
+      border: 1px solid #00ffcc;
+    }
+
+    input:focus {
+      outline: 2px solid #00ffccaa;
+    }
+
+    button {
+      background: #00ffcc;
+      color: #000;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: #00998c;
+    }
+
+    #ageResult, #compareResult {
+      margin-top: 1.5rem;
+      background: #111;
+      padding: 1rem;
+      border-left: 5px solid #00ffcc;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .feature {
+      text-align: center;
+      padding: 1rem;
+      background: #111;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00ffcc44;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px #00ffccaa;
+    }
+
+    .feature i {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block;
+      color: #00ffcc;
+    }
+
+    footer {
+      padding: 2rem;
+      background: #111;
+      text-align: center;
+      border-top: 2px solid #00ffcc;
+    }
+
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #00ffcc;
+      margin-bottom: 10px;
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a2d9d6df1c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Age Calculator</div>
+  </header>
+
+  <section class="start-animation image-hero">
+    <img src="https://www.fr.de/assets/images/32/312/32312484-aeltere-frau-mit-faltiger-haut-die-ein-foto-von-sich-selbst-als-junges-maedchen-mit-perfekter-haut-haelt-26YTDI7YBHBG.jpg" alt="Young to Old Woman">
+  </section>
+
+  <section>
+    <h2>👋 About This Age Calculator</h2>
+    <p>This age calculator is built with a coding-inspired theme. Just enter your name and date of birth to get your age in different formats. You can also compare your age with someone else!</p>
+  </section>
+
+  <section>
+    <h2>🧾 Calculate Your Age</h2>
+    <form id="ageCalculatorForm">
+      <input type="text" id="userName" placeholder="Enter your name" title="Enter your name" required>
+      <input type="date" id="dob" placeholder="Select your date of birth" title="Select your date of birth" required>
+      <button type="submit">Calculate Age</button>
+    </form>
+    <div id="ageResult"></div>
+  </section>
+
+  <section>
+    <h2>🤝 Compare with Others</h2>
+    <form id="compareForm">
+      <input type="text" id="compareName" placeholder="Name to compare with" title="Name to compare with" required>
+      <input type="date" id="compareDob" placeholder="Their date of birth" title="Their date of birth" required>
+      <button type="submit">Compare Age</button>
+    </form>
+    <div id="compareResult"></div>
+  </section>
+
+  <section>
+    <h2>💡 Features</h2>
+    <div class="features">
+      <div class="feature"><i class="fas fa-calculator"></i> Multiple Time Units</div>
+      <div class="feature"><i class="fas fa-user"></i> Personalized Output</div>
+      <div class="feature"><i class="fas fa-code"></i> Coding Theme</div>
+      <div class="feature"><i class="fas fa-users"></i> Compare with Friends</div>
+    </div>
+  </section>
+
+  <footer>
+    <h3>📩 Contact</h3>
+    <p>Email: <a href="rajlaiya2017@gmail.com">you@example.com</a></p>
+    <p>GitHub: <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">yourusername</a></p>
+  </footer>
+
+  <script>
+    let userDOB = null; // store user's DOB globally for comparison
+
+    document.getElementById('ageCalculatorForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('userName').value.trim();
+      const dob = new Date(document.getElementById('dob').value);
+      const now = new Date();
+
+      if (!name || isNaN(dob)) {
+        alert("Please enter a valid name and date.");
+        return;
+      }
+
+      userDOB = dob; // store user's DOB
+
+      const diff = now - dob;
+      const ageInSeconds = Math.floor(diff / 1000);
+      const ageInMinutes = Math.floor(ageInSeconds / 60);
+      const ageInHours = Math.floor(ageInMinutes / 60);
+      const ageInDays = Math.floor(ageInHours / 24);
+      const ageInWeeks = Math.floor(ageInDays / 7);
+      const ageInMonths = Math.floor(ageInDays / 30.4375);
+      const ageInYears = Math.floor(ageInMonths / 12);
+
+      document.getElementById('ageResult').innerHTML = `
+        <strong>${name}</strong>, your calculated age is:<br>
+        - ${ageInYears} years<br>
+        - ${ageInMonths} months<br>
+        - ${ageInWeeks} weeks<br>
+        - ${ageInDays} days<br>
+        - ${ageInHours} hours<br>
+        - ${ageInMinutes} minutes<br>
+        - ${ageInSeconds} seconds
+      `;
+    });
+
+    document.getElementById('compareForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name1 = document.getElementById('userName').value.trim();
+      const name2 = document.getElementById('compareName').value.trim();
+      const dob2 = new Date(document.getElementById('compareDob').value);
+      const dob1 = userDOB || new Date(document.getElementById('dob').value);
+
+      if (!name1 || !name2 || isNaN(dob1) || isNaN(dob2)) {
+        alert("Please fill in both names and valid birthdates.");
+        return;
+      }
+
+      const ageDiff = Math.abs(dob1 - dob2);
+      const years = Math.floor(ageDiff / (1000 * 60 * 60 * 24 * 365.25));
+
+      let older = dob1 < dob2 ? name1 : name2;
+      let younger = dob1 > dob2 ? name1 : name2;
+
+      document.getElementById('compareResult').innerHTML = `
+        <strong>${older}</strong> is ${years} year(s) older than <strong>${younger}</strong>.
+      `;
+    });
+  </script>
+</body>
+</html>
